@@ -4,7 +4,15 @@ import authRouter from "./routes/auth.route.js";
 import cityRouter from "./routes/city.route.js";
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://world-wise-travel-react.vercel.app", // Vercel frontend
+      "http://localhost:5173", // local dev (optional)
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/api/users", authRouter);
 app.use("/api/cities", cityRouter);

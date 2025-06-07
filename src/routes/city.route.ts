@@ -8,9 +8,9 @@ import { Router } from "express";
 
 const router = Router();
 
-router.post("/city", addCity);
+router.post("/cities", addCity);
 router.get("/cities", getCities);
 router.get("/city/:id", getCity);
-router.delete("/:id", deleteCity);
+router.delete("/city/:id", deleteCity);
 
 export default router;

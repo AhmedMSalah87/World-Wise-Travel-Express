@@ -16,7 +16,7 @@ app.use(
 app.use(express.json());
 app.use("/api/users", authRouter);
 app.use("/api/cities", cityRouter);
-app.use("/api/users", cityRouter);
+// app.use("/api/users", cityRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("hello world");

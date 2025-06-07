@@ -11,7 +11,8 @@ export const connectDB = async () => {
   let db: Db;
   try {
     client = new MongoClient(uri, {
-      tls: true,
+      ssl: true,
+      tlsAllowInvalidCertificates: false,
     });
     await client.connect();
     db = client.db(dbName);
